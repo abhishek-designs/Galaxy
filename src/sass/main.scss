@@ -433,7 +433,6 @@ body {
   top: 1rem;
   right: 1rem;
   background: rgba(245, 159, 47, 0.801);
-
   filter: contrast(100px);
   // box-shadow: 0 0 10px 14px 15px rgba(253, 177, 25, 0.877);
   box-shadow: inset 6px 2px 8px 8px rgba(0, 0, 0, 0.3),
@@ -449,3 +448,85 @@ body {
 //   z-index: 2;
 //   border-radius: inherit;
 // }
+
+.frame-contain {
+  background: #f4f4f4;
+  width: 100%;
+  height: 100vh;
+}
+
+.parent-box {
+  background: #ccc;
+  padding: 0.6rem;
+  height: 10rem;
+  border-radius: 9px;
+}
+
+.parent-box .child-box {
+  background: #f4f4f4;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 5px;
+}
+
+.frame-contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: gray;
+  padding: 0 1rem;
+}
+
+.frame-contain .list {
+  list-style: none;
+  flex-grow: 1;
+  // background-color: red;
+}
+
+.frame-contain .list .list-item {
+  position: relative;
+  padding: 0;
+  background-color: #f4f4f4;
+  overflow: hidden;
+}
+
+.frame-contain .list .list-item .item-container {
+  position: relative;
+  z-index: 2;
+  background-color: green;
+  padding: 1rem 0;
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: #f4f4f4;
+}
+
+.frame-contain .list .list-item .hidden-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border: none;
+  color: #f4f4f4;
+  padding: 0 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.frame-contain .list .list-item .hidden-btn.left-btn {
+  background-color: blue;
+  justify-content: start;
+  left: 0;
+}
+.frame-contain .list .list-item .hidden-btn.right-btn {
+  background-color: red;
+  right: 0;
+  justify-content: end;
+}
